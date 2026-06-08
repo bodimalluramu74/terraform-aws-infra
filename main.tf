@@ -23,3 +23,12 @@ resource "aws_instance" "test-my-1"{
     "Name"= "test-my-1"
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "terraform-s3-mybucket-dev"
+    resource = "arn:aws:s3:::terraform-s3-mybucket-dev/Dev/"
+    key    = "Dev/"
+    region = "us-east-1"
+  }
+}

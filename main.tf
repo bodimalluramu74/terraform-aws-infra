@@ -25,9 +25,12 @@ resource "aws_instance" "test-my-1"{
   }
 }
 
-resource "aws_s3_bucket" "mys3bucket" {
-  bucket = "my-unique-s3-bucket-name-12345"
+resource "aws_s3_bucket" "my_bucket" {
+bucket = "my-unique-s3-bucket-name-12345"
 
-  
+tags = {
+Name = "My bucket"
+Environment = "Dev"
+}
 }
 

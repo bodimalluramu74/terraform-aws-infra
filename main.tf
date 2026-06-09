@@ -25,11 +25,11 @@ resource "aws_instance" "test-my-1"{
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket = "terraform-s3-mybucket-dev"
-    key    = "Dev"
-    region = "us-east-1"
+resource "aws_s3_bucket" "mys3bucket" {
+  bucket = "my-unique-s3-bucket-name-12345"
+  tags ={
+    name = "mys3bucket"
   }
+  
 }
 

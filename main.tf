@@ -16,11 +16,12 @@ resource "aws_subnet" "subnet1" {
 }
 
 resource "aws_instance" "test-my-1"{
+  count = 3
   ami = "ami-00e801948462f718a"
   instance_type = "t3.micro"
   tags = {
     "Environment" = "aws_instance"
-    "Name"= "test-my-1"
+    "Name"= "test-my-1${count.index}"
   }
 }
 
@@ -32,3 +33,4 @@ terraform {
     region = "us-east-1"
   }
 }
+

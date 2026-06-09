@@ -28,7 +28,7 @@ resource "aws_instance" "test-my-1"{
 terraform {
   backend "s3" {
     bucket = "terraform-s3-mybucket-dev"
-    key    = "Dev/"
+    key    = "Dev"
     region = "us-east-1"
   }
 }
